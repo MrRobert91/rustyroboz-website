@@ -1,0 +1,20 @@
+---
+title: 'Entendiendo los Embeddings de Palabras en NLP'
+date: '2024-03-05'
+description: 'Una introducción intuitiva a qué son los embeddings de palabras como Word2Vec y por qué revolucionaron el Procesamiento del Lenguaje Natural.'
+tags: ['NLP', 'Deep Learning', 'Embeddings']
+---
+
+En el Procesamiento del Lenguaje Natural (NLP), uno de los mayores desafíos siempre ha sido cómo representar las palabras de una manera que las computadoras puedan entender. Una solución simple, como el one-hot encoding, falla estrepitosamente porque trata cada palabra como una entidad aislada, sin ninguna noción de similitud o relación. "Perro" y "gato" son tan diferentes como "perro" y "coche".
+
+### La Revolución de los Vectores
+
+Aquí es donde entran los **embeddings de palabras**. La idea es simple pero poderosa: representar cada palabra como un vector denso de números (por ejemplo, un vector de 300 dimensiones) en un espacio continuo.
+
+La magia reside en que la posición de estos vectores en el espacio captura el significado semántico de las palabras. Palabras con significados similares, como "rey" y "reina", estarán cerca en este espacio vectorial.
+
+Más aún, las relaciones entre palabras se pueden capturar con aritmética vectorial. El ejemplo clásico del paper original de Word2Vec es:
+
+`vector('rey') - vector('hombre') + vector('mujer') ≈ vector('reina')`
+
+Este enfoque, popularizado por algoritmos como **Word2Vec** y **GloVe**, permitió a los modelos de Deep Learning entender el lenguaje a un nivel mucho más profundo, sentando las bases para los transformadores y los grandes modelos de lenguaje (LLMs) que dominan el campo hoy en día.
