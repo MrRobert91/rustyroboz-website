@@ -1,0 +1,11 @@
+# Dependencies
+node_modules
+
+# Git
+.git
+
+# Next.js build output
+.next
+
+# Log files
+server.log
