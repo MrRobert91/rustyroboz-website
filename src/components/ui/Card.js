@@ -9,7 +9,7 @@ const Card = ({ post, type }) => {
       <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 group-hover:text-blue-600 transition-colors duration-300">{post.title}</h5>
       <p className="font-normal text-gray-700 mb-4">{post.description}</p>
       <div className="flex flex-wrap gap-2">
-        {post.tags && post.tags.map(tag => (
+        {post.tags && Array.isArray(post.tags) && post.tags.map(tag => (
           <span key={tag} className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">
             {tag}
           </span>

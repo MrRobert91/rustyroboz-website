@@ -8,7 +8,7 @@ const Header = () => {
           ML Engineer
         </Link>
         <nav className="hidden md:flex gap-6">
-          <Link href="/#about" className="text-gray-600 hover:text-gray-900 transition-colors">
+          <Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
             Sobre mí
           </Link>
           <Link href="/proyectos" className="text-gray-600 hover:text-gray-900 transition-colors">
