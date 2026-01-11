@@ -24,10 +24,13 @@ export function getSortedPostsData(subDirectory) {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
 
+    const tags = matterResult.data.tags || [];
+
     // Combine the data with the id
     return {
       slug,
       ...matterResult.data,
+      tags,
     };
   });
   // Sort posts by date
