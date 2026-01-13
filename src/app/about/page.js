@@ -11,10 +11,11 @@ export default function AboutPage() {
       <section className="grid md:grid-cols-5 gap-12 items-center">
         <div className="md:col-span-2">
           <div className="relative aspect-square rounded-full overflow-hidden border-4 border-white shadow-xl shadow-mocha/10 bg-mocha/5">
-            {/* Placeholder for Profile Image */}
-            <div className="absolute inset-0 flex items-center justify-center text-4xl text-mocha/20">
-              DR
-            </div>
+            <img
+              src="/images/profile.jpg"
+              alt="David Robert"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
         <div className="md:col-span-3 space-y-6">
@@ -25,6 +26,16 @@ export default function AboutPage() {
           <p className="text-lg text-charcoal/80 leading-relaxed text-justify">
             My philosophy is simple: technology should serve people, not the other way around. I strive to create elegant, efficient, and ethical AI solutions.
           </p>
+          <div className="pt-4">
+            <a
+              href="/cv.pdf"
+              download
+              className="inline-flex items-center gap-2 px-6 py-3 bg-mocha text-cream font-medium rounded-full shadow-lg hover:bg-terracotta hover:shadow-terracotta/30 transition-all duration-300"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              Download Resume
+            </a>
+          </div>
         </div>
       </section>
 

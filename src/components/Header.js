@@ -47,7 +47,7 @@ const Header = () => {
           ))}
           <Link
             href="/contacto"
-            className="px-5 py-2 text-sm font-semibold text-white bg-mocha hover:bg-terracotta rounded-full shadow-lg hover:shadow-terracotta/25 hover:scale-105 transition-all duration-300"
+            className="px-5 py-2 text-sm font-semibold text-cream bg-[#3E2723] hover:bg-[#D87D4A] rounded-full shadow-lg hover:shadow-terracotta/25 hover:scale-105 transition-all duration-300 inline-flex items-center justify-center"
           >
             Contact
           </Link>
