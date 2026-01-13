@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Merriweather } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -13,17 +13,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const merriweather = Merriweather({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
+});
+
 
 export const metadata = {
-  title: "Portfolio de un ML Engineer",
-  description: "Un portfolio personal y blog técnico sobre Machine Learning, IA y datos.",
+  title: "David Robert | Data Scientist & ML Engineer",
+  description: "Personal portfolio and technical blog about Machine Learning, AI, and data.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 text-gray-800`}
+        className={`${geistSans.variable} ${geistMono.variable} ${merriweather.variable} antialiased bg-cream text-mocha selection:bg-terracotta/30`}
       >
         <div className="flex flex-col min-h-screen">
           <Header />
