@@ -3,6 +3,12 @@ import Link from 'next/link';
 const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-deep-slate/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-gray-800 focus:border focus:border-gray-300 focus:rounded-md"
+      >
+        Saltar al contenido principal
+      </a>
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 group">
           <div className="p-2 bg-gradient-to-tr from-electric-blue to-teal rounded-lg shadow-lg group-hover:shadow-electric-blue/50 transition-all duration-300">
