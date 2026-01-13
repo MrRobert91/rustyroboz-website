@@ -12,10 +12,11 @@ module.exports = {
         mono: ["var(--font-geist-mono)"],
       },
       colors: {
-        'deep-slate': '#0f172a',
-        'charcoal': '#1e293b',
-        'electric-blue': '#3b82f6',
-        'teal': '#14b8a6',
+        'cream': '#FDFBF7',
+        'mocha': '#3E2723',
+        'terracotta': '#D87D4A',
+        'gold': '#E6CFA1',
+        'charcoal': '#454545',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
