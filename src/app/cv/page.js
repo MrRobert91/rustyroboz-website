@@ -15,7 +15,7 @@ export default function CVPage() {
         </p>
       </div>
       <a
-        href="cv_david_robert_12_25_en.pdf"
+        href="/cv_david_robert_12_25_en.pdf"
         download
         className="inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all"
       >

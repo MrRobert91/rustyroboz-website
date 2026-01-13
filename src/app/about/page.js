@@ -28,7 +28,7 @@ export default function AboutPage() {
           </p>
           <div className="pt-4">
             <a
-              href="/cv.pdf"
+              href="/cv_david_robert_12_25_en.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-3 bg-mocha text-cream font-medium rounded-full shadow-lg hover:bg-terracotta hover:shadow-terracotta/30 transition-all duration-300"
             >
