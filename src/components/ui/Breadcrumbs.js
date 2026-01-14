@@ -2,17 +2,21 @@ import Link from 'next/link';
 
 const Breadcrumbs = ({ crumbs }) => {
   return (
-    <nav className="mb-8">
-      <ol className="flex space-x-2 text-gray-500">
+    <nav aria-label="breadcrumb" className="mb-8">
+      <ol className="flex items-center text-[var(--foreground)]">
         {crumbs.map((crumb, index) => (
           <li key={index} className="flex items-center">
-            {index > 0 && <span className="mx-2">/</span>}
             {crumb.href ? (
-              <Link href={crumb.href} className="hover:text-gray-700">
+              <Link href={crumb.href} className="hover:text-white">
                 {crumb.label}
               </Link>
             ) : (
               <span className="font-semibold">{crumb.label}</span>
+            )}
+            {index < crumbs.length - 1 && (
+              <span aria-hidden="true" className="mx-2 select-none">
+                /
+              </span>
             )}
           </li>
         ))}
