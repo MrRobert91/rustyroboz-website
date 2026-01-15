@@ -1,8 +1,29 @@
+"use client";
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const Header = () => {
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setHasScrolled(offset > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-deep-slate/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        hasScrolled
+          ? 'bg-deep-slate/80 backdrop-blur-md border-b border-white/10 shadow-lg'
+          : 'bg-transparent border-b border-transparent'
+      }`}
+    >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 group">
           <div className="p-2 bg-gradient-to-tr from-electric-blue to-teal rounded-lg shadow-lg group-hover:shadow-electric-blue/50 transition-all duration-300">
