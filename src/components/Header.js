@@ -18,6 +18,7 @@ const Header = () => {
               strokeLinejoin="round"
               className="text-white"
             >
+              <title>Logo de David Robert</title>
               <rect width="18" height="18" x="3" y="3" rx="2" />
               <path d="M9 3v18" />
               <path d="M9 9h6" />
