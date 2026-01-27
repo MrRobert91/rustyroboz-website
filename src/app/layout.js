@@ -25,9 +25,18 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 text-gray-800`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:text-gray-800"
+        >
+          Skip to main content
+        </a>
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-grow container mx-auto px-4 py-8">
+          <main
+            id="main-content"
+            className="flex-grow container mx-auto px-4 py-8"
+          >
             {children}
           </main>
           <Footer />
