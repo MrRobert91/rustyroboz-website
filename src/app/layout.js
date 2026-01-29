@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       >
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-grow container mx-auto px-4 py-8">
+          <main id="main-content" tabIndex={-1} className="flex-grow container mx-auto px-4 py-8 outline-none">
             {children}
           </main>
           <Footer />
