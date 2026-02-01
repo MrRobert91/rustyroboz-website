@@ -5,7 +5,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-deep-slate/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:bg-white focus:text-gray-800 focus:rounded-md focus:shadow-lg focus:z-[9999]"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-6 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:text-gray-800 focus:rounded-md focus:shadow-lg focus:ring-2 focus:ring-electric-blue"
       >
         Skip to main content
       </a>
