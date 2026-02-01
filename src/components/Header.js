@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { useState, useEffect, useRef } from 'react';
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
