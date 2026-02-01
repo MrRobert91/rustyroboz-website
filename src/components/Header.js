@@ -1,29 +1,39 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 const Header = () => {
-  const [hasScrolled, setHasScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = window.scrollY;
-      setHasScrolled(offset > 10);
+      const currentScrollY = window.scrollY;
+      // Hide header on scroll down past a threshold, show on scroll up
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      lastScrollY.current = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        hasScrolled
-          ? 'bg-deep-slate/80 backdrop-blur-md border-b border-white/10 shadow-lg'
-          : 'bg-transparent border-b border-transparent'
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-deep-slate/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-6 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:text-gray-800 focus:rounded-md focus:shadow-lg focus:ring-2 focus:ring-electric-blue"
+      >
+        Skip to main content
+      </a>
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 group">
           <div className="p-2 bg-gradient-to-tr from-electric-blue to-teal rounded-lg shadow-lg group-hover:shadow-electric-blue/50 transition-all duration-300">
@@ -39,6 +49,7 @@ const Header = () => {
               strokeLinejoin="round"
               className="text-white"
             >
+              <title>Logo de David Robert</title>
               <rect width="18" height="18" x="3" y="3" rx="2" />
               <path d="M9 3v18" />
               <path d="M9 9h6" />
