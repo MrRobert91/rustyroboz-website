@@ -10,10 +10,11 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      // Hide header on scroll down past a threshold, show on scroll up
       if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-        setIsVisible(false); // Hide header on scroll down
+        setIsVisible(false);
       } else {
-        setIsVisible(true); // Show header on scroll up
+        setIsVisible(true);
       }
       lastScrollY.current = currentScrollY;
     };
@@ -26,11 +27,13 @@ const Header = () => {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-deep-slate/80 backdrop-blur-md border-b border-white/10 transition-transform duration-300 ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-deep-slate/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-6 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:text-gray-800 focus:rounded-md focus:shadow-lg focus:ring-2 focus:ring-electric-blue"
+      >
+        Skip to main content
+      </a>
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 group">
           <div className="p-2 bg-gradient-to-tr from-electric-blue to-teal rounded-lg shadow-lg group-hover:shadow-electric-blue/50 transition-all duration-300">
@@ -46,6 +49,7 @@ const Header = () => {
               strokeLinejoin="round"
               className="text-white"
             >
+              <title>Logo de David Robert</title>
               <rect width="18" height="18" x="3" y="3" rx="2" />
               <path d="M9 3v18" />
               <path d="M9 9h6" />
