@@ -27,16 +27,13 @@ export default function RootLayout({ children }) {
       >
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:text-gray-800"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-6 focus:left-6 focus:z-[9999] focus:px-6 focus:py-3 focus:bg-electric-blue focus:text-white focus:font-bold focus:rounded-lg focus:shadow-2xl focus:ring-4 focus:ring-teal/50 transition-all"
         >
-          Skip to main content
+          Skip to content
         </a>
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main
-            id="main-content"
-            className="flex-grow container mx-auto px-4 py-8"
-          >
+          <main id="main-content" className="flex-grow container mx-auto px-4 pt-24 pb-8 scroll-mt-24">
             {children}
           </main>
           <Footer />
