@@ -4,7 +4,7 @@ export default function HomePage() {
   return (
     <div className="space-y-32 pb-20">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center min-h-[80vh] text-center pt-20">
+      <section className="relative flex flex-col items-center justify-center min-h-[80vh] text-center">
         {/* Abstract Background Elements */}
         <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
           <div className="absolute top-20 left-1/4 w-72 h-72 bg-electric-blue/20 rounded-full blur-[100px] animate-float"></div>
